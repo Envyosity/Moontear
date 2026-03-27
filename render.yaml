@@ -2,9 +2,8 @@ services:
   - type: web
     name: loneliness
     runtime: node
-    plan: free
     buildCommand: npm install && npm run build
     startCommand: npm run start
     envVars:
       - key: NODE_VERSION
-        value: 20 # Ou a versão que tu estás usando localmente
+        value: 20
