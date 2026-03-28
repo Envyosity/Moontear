@@ -6,12 +6,15 @@
   background-size: 100% 2px, 3px 100%;
   pointer-events: none;
   z-index: 9000;
-  opacity: 1;
-  animation: flicker 0.15s infinite;
+  opacity: 0.95;
+  
+  will-change: opacity;
+  
+  animation: flicker 1.5s infinite alternate; 
 }
 
 @keyframes flicker {
-  0% { opacity: 0.9; }
-  50% { opacity: 1; }
-  100% { opacity: 0.95; }
+  0%, 100% { opacity: 0.95; }
+  50% { opacity: 0.98; }
+  80% { opacity: 0.93; }
 }
