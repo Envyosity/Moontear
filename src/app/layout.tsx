@@ -3,7 +3,7 @@ import BottomBonfire from '@/components/BottomBonfire/BottomBonfire';
 import CrtOverlay from '@/components/CrtOverlay/CrtOverlay';
 
 export const metadata = {
-  title: '𝓔𝓷𝓿𝔂',
+  title: '𝓓𝓻𝓮𝓭𝓰𝓮𝓷',
   description: 'Life is precisely the finite',
 };
 
