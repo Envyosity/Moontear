@@ -81,14 +81,42 @@
 }
 
 .memory-item {
-  padding: 1.5rem 0;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 1.5rem;
+  background-color: #1a1a1a;
+  border-left: 3px solid #555;
+  border-radius: 4px;
+  transition: transform 0.3s ease, border-left-color 0.3s ease;
+}
+
+.memory-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  filter: grayscale(100%);
+  transition: all 0.4s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.memory-item p {
+  position: relative;
+  z-index: 1;
   margin: 0;
   font-size: 1rem;
   line-height: 1.6;
-  color: var(--text-primary);
+  color: #ccc;
   font-style: italic;
-  border-bottom: 1px solid var(--border-color);
-  transition: opacity 0.3s ease;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9), 0 0 12px rgba(0, 0, 0, 0.8);
 }
 
 .memory-item:last-child {
@@ -96,7 +124,13 @@
 }
 
 .memory-item:hover {
-  opacity: 0.8;
+  transform: translateX(4px);
+  border-left-color: var(--accent-color);
+}
+
+.memory-item:hover::before {
+  opacity: 0.4; /* Gif bem mais visível agora */
+  filter: grayscale(30%); /* Traz de volta um pouco da cor original do gif */
 }
 
 @media (max-width: 640px) {
